@@ -27,6 +27,10 @@ To do so, there are some features that I would like to add:
 - Find a way to do jumps in the code (after I translate something, there will be an option asking if I want to translate anything else and if so, jump to the begining of the code).
 - Fix bugs.
 
+> ### Update:
+> Added a *goto* statement that does what it's written in the first point on the previous section. After the translation is done, the program asks if you want to translate something else. If your answer is yes, the *goto* statement makes the program jump to the corresponding label (in this case, to the begining of the code). If you answer no, the program ends.
+> This statement is something that programmers want to avoid to use because it confuses the flow of the program, but to avoid using a *while* loop on the main function, I think it would be more simple to use the *goto* since I only use it once.
+
 ### List of known bugs:
 - Morse code to text:
   - Need to write ' ' after every morse code word or else the program throws an error.
