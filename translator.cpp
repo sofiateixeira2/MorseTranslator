@@ -227,6 +227,7 @@ void readFile(int op) {
 
 int main() {
     int op;
+    BEGIN:
     system("CLS");
     cout << "!WARNING! The following program is not finished yet so it may contain some errors or bugs." << endl;
     cout << "This program (at the moment) does not work with numbers" << endl;
@@ -234,6 +235,7 @@ int main() {
     cout << "Choose your option" << endl;
     cout << "1. Translate text to morse code" << endl;
     cout << "2. Translate morse code to text" << endl;
+    cout << "0. Exit" << endl;
     cout << ": ";
     cin >> op;
     system("CLS");
@@ -247,6 +249,12 @@ int main() {
         system("CLS");
         if(inputOP == 1) readStandard(op);
         if(inputOP == 2) readFile(op);
+        cout << "\nDo you want to translate something else? (y/n)" << endl;
+        cout << ": ";
+        char ans;
+        cin >> ans;
+        if(ans == 'y') goto BEGIN;
+        else if (ans == 'n') return 0;
     } else if(op == 2) {
         cout << "1. Input via standard input" << endl;
         cout << "2. Input via file" << endl;
@@ -256,6 +264,14 @@ int main() {
         system("CLS");
         if(inputOP == 1) readStandard(op);
         if(inputOP == 2) readFile(op);
+                cout << "\nDo you want to translate something else? (y/n)" << endl;
+        cout << ": ";
+        char ans;
+        cin >> ans;
+        if(ans == 'y') goto BEGIN;
+        else if (ans == 'n') return 0;
+    } else if(op == 0) {
+        return 0;
     } else {
         cout << "Not a valid option." << endl;
         return 0;
